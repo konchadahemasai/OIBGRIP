@@ -1,0 +1,90 @@
+<html>
+<head>
+	<title>Temperature Converter</title>
+
+	<style>
+		body{
+			display: flex;
+	        justify-content:center;
+	        align-items:center;
+	        height:100vh;
+	        background-color:grey;
+		}
+		form{
+			padding-top:5%;
+	        padding-bottom:5%;
+	        padding-left:5%;
+	        padding-right:5%;
+	        border:solid 1px black;
+	        background-color: white;
+		}
+		.o{
+			height: 50px;
+	        width: 200px;
+	        border:none;
+	        background-color: transparent;
+	        resize: none;
+	        outline: none;
+
+		}
+		#type{
+			width: 200px;
+			height: 40px;
+		}
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+		  -webkit-appearance: none;
+  			margin: 0;
+		}
+		.btn{
+			background-color: black;
+	        color:white;
+	        height: 40px;
+	        width: 100px;
+	        border-radius:20px;
+		}
+
+	</style>
+	</head>
+	<body >
+		<form>
+			<h1>Temperature Converter</h1>
+			<div id="con">
+				<!-- <input type="number" placeholder="temp" id="num"> -->
+				<fieldset>
+		          <legend align="left">Enter Degree</legend>
+		          <input type="number" step="any" placeholder="temp" id="num" class="o">
+		        </fieldset>
+      			<br>
+				<h3>Type</h3>
+				<select id="type">
+					<option>Fahrenheit</option>
+					<option>Celsius</option>
+				</select>
+			</div>
+			<br><br>
+			<h3>Result</h3>
+			<div class="res" id="res"></div><br>
+			<div align="center">
+			<button onclick="myfun()" type="button" class="btn" >convert</button></div>
+
+		</form>
+	</body>
+	<script type="text/javascript">
+		
+		function myfun(){
+			let a=document.getElementById("num").value;
+			let b=document.getElementById("type").value;
+			let c;
+			if(b=="Celsius"){
+				c=(a*(9/5))+32;
+				document.getElementById("res").innerHTML=c+"\u00B0F";
+			}
+			if(b=="Fahrenheit"){
+				c=((5/9)*(a-32));
+				document.getElementById("res").innerHTML=c+"\u00B0C";
+			}
+			
+		}
+	</script>
+</html>
